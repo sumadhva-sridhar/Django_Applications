@@ -1,0 +1,15 @@
+{% extends "predictor/base.html" %}
+
+{% block title %}
+	Housing Predictions
+{% endblock %}
+
+{% block body %}
+	<h1>Housing Prices</h1>
+	<form action = "{% url 'result' %}" method = "post">
+		{% csrf_token %}
+		<label for = "val">Enter value</label>
+		<input type = "text" name = "val" id = "val">
+		<input type = "submit" value = "submit">
+	</form>
+{% endblock %}

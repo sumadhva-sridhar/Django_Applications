@@ -1,0 +1,16 @@
+{% extends "predictor/base.html" %}
+
+{% block title %}
+	Result
+{% endblock %}
+
+{% block body %}
+	<h1>Estimated sentiment</h1>
+	{% if pos >= neg %}
+		<h2><strong>Positive</strong> with probability {{ pos }}</h2>
+	{% else %}
+		<h2><strong>Negative</strong> with probability {{ neg }}</h2>
+	{% endif %}
+
+	<h4><a href = "{% url 'index' %}">Predict another tweet</a></h4>
+{% endblock %}
